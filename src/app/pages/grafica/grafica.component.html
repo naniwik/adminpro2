@@ -1,1 +1,10 @@
 <p>grafica works!</p>
+
+<div class=""  *ngFor="let item of this.doughnutChartLabels; let i = index">
+  <div class="col-5">
+    <app-doughnut
+      [titulo]="item"
+      [doughnutChartData]="this.doughnutChartData[i]"
+    ></app-doughnut>
+  </div>
+</div>
