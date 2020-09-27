@@ -10,7 +10,6 @@ export class ServiceService {
 
   public iniTheme(): void {
     const theme = sessionStorage.getItem('theme');
-    console.log(theme);
     if (theme) {
       const url: string = this.licktheme.getAttribute('href') as string;
       const urlbase =

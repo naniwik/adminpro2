@@ -5,21 +5,41 @@ import { ProgressComponent } from './progress/progress.component';
 import { GraficaComponent } from './grafica/grafica.component';
 import { PagesComponent } from './pages.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 const routes: Routes = [
   {
     path: 'dashboard',
     component: PagesComponent,
     children: [
-      { path: '', component: DashboardComponent },
-      { path: 'progress', component: ProgressComponent },
-      { path: 'grafica', component: GraficaComponent },
-      { path: 'accset', component: AccountSettingsComponent},
+      { path: '', component: DashboardComponent, data: { titulo: 'Dashboard' } },
+      {
+        path: 'progress',
+        component: ProgressComponent,
+        data: { titulo: 'Progreso' },
+      },
+      {
+        path: 'grafica',
+        component: GraficaComponent,
+        data: { titulo: 'Graficas' },
+      },
+      {
+        path: 'accset',
+        component: AccountSettingsComponent,
+        data: { titulo: 'Configuracion' },
+      },
+      {
+        path: 'promesas',
+        component: PromesasComponent,
+        data: { titulo: 'Promesas' },
+      },
+      { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RXJS' } },
     ],
   },
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class PagesRoutingModule {}
