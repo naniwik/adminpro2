@@ -20,7 +20,7 @@ export class Usuario extends UsuarioBase {
         public google: boolean = false,
         public img?: string,
         public role?: string,
-        public uid?: string,
+        public id?: string,
     ) {
         super(email);
     };
